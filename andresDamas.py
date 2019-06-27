@@ -5,6 +5,8 @@ frame.pack()
 
 def posin(event):
     info = event.widget.grid_info()
+    f= info["row"]
+    c= info["column"]
     print((info["row"], info["column"]))
 
 def casillas(texto, colortexto, color, fila, columna):
