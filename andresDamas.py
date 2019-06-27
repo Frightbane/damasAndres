@@ -4,10 +4,10 @@ frame = Frame()
 frame.pack()
 
 def posin(event):
+    global f,c
     info = event.widget.grid_info()
     f= info["row"]
     c= info["column"]
-    global f,c
     print((info["row"], info["column"]))
 
 def casillas(texto, colortexto, color, fila, columna):
@@ -43,7 +43,7 @@ def clickNuevoJuego():
                     casillas("x", 'white', 'black', f, c)
                 if((f%2 == 0) and (c%2 == 0)):
                     casillas("x", 'white', 'black', f, c)
-def movimiento(event,f,c):
+def movimiento(event):
     if(f==4 and c==2):
         casillas("x", 'red','black', f, c)==casillas(" ", 'black', 'black', f, c)
     if(f==5 and c==3):
