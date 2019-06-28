@@ -10,17 +10,18 @@ def obtener_boton(fila,columna):
     return boton
 
 def intercalar(event):
+    
+    boton=event.widget()
+    
+    texto=boton.cget('text')
+    
     #boton actual
     global f,c
-    if event.cget('text')==null :
-        event.widget.config(text='X')
+    if texto==null or text == " " :
+        boton.config(text='X')
     else:
-        event.widget.config(text=' ')
-    #boton anterior
-    if  obtener_boton(f,c).cget('text') == null or obtener_boton(f,c).cget('text') == " " :
-        obtener_boton(f,c).config(text="x")
-    else:
-        obtener_boton(f,c).config(text=' ')
+        boton.config(text=' ')
+
     
 def posin(event):
     global f,c
