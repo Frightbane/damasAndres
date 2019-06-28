@@ -3,7 +3,7 @@ ventana = Tk()
 frame = Frame()
 frame.pack()
 
-def retorna_boton_ingrese_fila_y_columna(fila,columna)
+def retorna_boton_ingrese_fila_y_columna(fila,columna):
     
     boton = root.grid_slaves(row=fila, column=columna)
     
