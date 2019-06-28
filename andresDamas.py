@@ -3,12 +3,25 @@ ventana = Tk()
 frame = Frame()
 frame.pack()
 
-def retorna_boton_ingrese_fila_y_columna(fila,columna):
+def obtener_boton(fila,columna):
     
     boton = root.grid_slaves(row=fila, column=columna)
     
     return boton
 
+def intercalar(event):
+    #boton actual
+    
+    if event.widget[text]==null :
+        event.widget[text]='X'
+    else:
+        event.widget[text]=' '
+    #boton anterior
+    if  obtener_boton(f,c)['text']==null:
+        obtener_boton(f,c)['text']='X'
+    else:
+        obtener_boton(f,c)['text']=' '
+    
 def posin(event):
     global f,c
     info = event.widget.grid_info()
@@ -58,8 +71,10 @@ def movimiento(event):
 
 ventana.bind_all("<Button 1>",movimiento)
 
-
 tablero()
+
+f=2
+c=2
 
 clickNuevoJuego()
 ventana.mainloop()
