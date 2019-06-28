@@ -5,22 +5,22 @@ frame.pack()
 
 def obtener_boton(fila,columna):
     
-    boton = root.grid_slaves(row=fila, column=columna)
+    boton = ventana.grid_slaves(row=fila, column=columna)
     
     return boton
 
 def intercalar(event):
     #boton actual
-    
-    if event.widget[text]==null :
-        event.widget[text]='X'
+    global f,c
+    if event.cget('text')==null :
+        event.widget.config(text='X')
     else:
-        event.widget[text]=' '
+        event.widget.config(text=' ')
     #boton anterior
-    if  obtener_boton(f,c)['text']==null:
-        obtener_boton(f,c)['text']='X'
+    if  obtener_boton(f,c).cget('text') == null or obtener_boton(f,c).cget('text') == " " :
+        obtener_boton(f,c).config(text="x")
     else:
-        obtener_boton(f,c)['text']=' '
+        obtener_boton(f,c).config(text=' ')
     
 def posin(event):
     global f,c
