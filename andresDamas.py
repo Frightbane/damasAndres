@@ -63,13 +63,16 @@ def clickNuevoJuego():
                 if((f%2 == 0) and (c%2 == 0)):
                     casillas("x", 'white', 'black', f, c)
 def movimiento(event):
-    if(f==4 and c==2):
-        casillas("x", 'red','black', f, c)==casillas(" ", 'black', 'black', f, c)
-    if(f==5 and c==3):
-        casillas(" ", 'black', 'black', f, c)==casillas("x", 'red','black', f, c)
+    if(f>=4 and c>=2):
+        if(casillas("O", 'red','black', f, c)==casillas(" ", 'black', 'black', f, c) or casillas(" ", 'red','black', f, c)==casillas(" ", 'black', 'black', f, c)):
+            casillas("O", 'red','black', f, c)==casillas(" ", 'black', 'black', f, c)
+    if(f>4 and c>2):
+        if(casillas(" ", 'red','black', f, c)==casillas(" ", 'black', 'black', f, c)):
+            casillas(" ", 'black', 'black', f, c)==casillas("O", 'red','black', f, c)
 
 
-ventana.bind_all("<Button 1>",movimiento)
+
+ventana.bind("<Button 1>",movimiento)
 
 tablero()
 
