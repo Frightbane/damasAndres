@@ -3,6 +3,12 @@ ventana = Tk()
 frame = Frame()
 frame.pack()
 
+def widget_from_grid(f,c)
+    
+    boton = root.grid_slaves(row=f, column=c)
+    
+    return boton
+
 def posin(event):
     global f,c
     info = event.widget.grid_info()
@@ -50,7 +56,9 @@ def movimiento(event):
         casillas(" ", 'black', 'black', f, c)==casillas("x", 'red','black', f, c)
 
 
-ventana.bind("<Button 1>",movimiento)
+ventana.bind_all("<Button 1>",movimiento)
+
+
 tablero()
 
 clickNuevoJuego()
