@@ -3,9 +3,9 @@ ventana = Tk()
 frame = Frame()
 frame.pack()
 
-def widget_from_grid(f,c)
+def retorna_boton_ingrese_fila_y_columna(fila,columna)
     
-    boton = root.grid_slaves(row=f, column=c)
+    boton = root.grid_slaves(row=fila, column=columna)
     
     return boton
 
